@@ -1,0 +1,18 @@
+$mainFont: "Oswald", sans-serif;
+
+.todo {
+  position: relative;
+  .todo-button {
+    all: unset;
+    display: block;
+    min-width: 15em;
+    font-size: 1em;
+    font-family: $mainFont;
+    border: 0px solid white;
+    background: lightgray;
+    border-radius: 10px;
+    padding: 0.2em;
+    margin: 1em auto;
+    text-align: center;
+  }
+}

@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import "./App.css";
+import "./components/styles/App.scss";
 import Header from "./components/Header";
 import Input from "./components/Input";
+import Timer from "./components/Timer";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Input />
+      <section className="container">
+        <Timer className="timer" />
+        <Input className="input" />
+      </section>
     </div>
   );
 }

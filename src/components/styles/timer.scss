@@ -1,0 +1,33 @@
+$mainFont: "Oswald", sans-serif;
+
+.timer {
+  display: flex;
+  font-family: $mainFont;
+  .left {
+    .day {
+      font-size: 5em;
+      font-weight: bold;
+      line-height: 1.5em;
+    }
+  }
+  .right {
+    margin-top: 1.7em;
+    line-height: 2em;
+    .year {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: rgb(255, 49, 49);
+    }
+    .right-bottom {
+      color: rgb(105, 105, 105);
+      font-size: 2em;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-around;
+      .month {
+      }
+      .date {
+      }
+    }
+  }
+}

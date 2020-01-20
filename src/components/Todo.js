@@ -2,12 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { loadTodos } from "./customs/loadTodos";
 import { saveTodos } from "./customs/saveTodos";
 import Triggercontext from "./Triggercontext";
+import "./styles/todo.scss";
 
 const Todo = ({ todos, triggerHandler }) => {
   const trigger = useContext(Triggercontext);
-  useEffect(() => {
-    console.log("re-rendered");
-  }, [trigger]);
+  useEffect(() => {}, [trigger]);
 
   const deleteTodo = e => {
     const data = e.target.value;
@@ -22,9 +21,9 @@ const Todo = ({ todos, triggerHandler }) => {
       {todos
         ? todos.map(todo => (
             <button
+              class="todo-button"
               onClick={deleteTodo}
               key={todo.id}
-              style={{ display: "block" }}
               value={todo.data}
             >
               {todo.data}

@@ -5,9 +5,7 @@ export const useInput = (condition, msg) => {
   const onChange = e => {
     if (condition(value)) {
       setValue(e.target.value);
-      console.log(value);
     } else {
-      console.log(value);
       window.alert(msg);
       setValue("");
     }

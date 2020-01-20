@@ -5,9 +5,10 @@ import { addTodo } from "./customs/addTodo";
 import { saveTodos } from "./customs/saveTodos";
 import Triggercontext from "./Triggercontext";
 import List from "./List";
+import "./styles/input.scss";
 
 const Input = () => {
-  const maxLen = 10;
+  const maxLen = 24;
   const condition = value => value.length < maxLen;
   const msg = `A Todo must be less than ${maxLen} characters`;
   const [trigger, setTrigger] = useState(true);
@@ -21,26 +22,26 @@ const Input = () => {
   };
   const onClick = () => {
     const currentInput = input.value;
+    if (input.value === "") {
+      alert("Blank!");
+      return;
+    }
     const currentTodos = loadTodos();
     const newTodos = addTodo(currentInput, currentTodos);
     saveTodos(newTodos);
     setTrigger(!trigger);
   };
 
-  const pressEnter = e => {
-    if (e.key === "Enter") {
-      onClick();
-    }
-  };
-
   return (
     <div className="input">
-      <input onKeyPress={pressEnter} className="todo-input" {...input} />
-      <button className="add-button" onClick={onClick}>
-        Add
-      </button>
+      <form>
+        <input className="todo-input" {...input} autofocus />
+        <button className="add-button" onClick={onClick}>
+          ➕
+        </button>
+      </form>
       <Triggercontext.Provider value={trigger}>
-        <List triggerHandler={triggerHandler} />
+        <List class="todos-container" triggerHandler={triggerHandler} />
       </Triggercontext.Provider>
     </div>
   );
