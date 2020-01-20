@@ -5,14 +5,20 @@ import { addTodo } from "./customs/addTodo";
 import { saveTodos } from "./customs/saveTodos";
 import Triggercontext from "./Triggercontext";
 import List from "./List";
-import uuid from "react-uuid";
 
 const Input = () => {
-  const condition = value => value.length < 10;
-  const msg = "A Todo must be less than 24 characters";
-  const input = useInput(condition, msg);
+  const maxLen = 10;
+  const condition = value => value.length < maxLen;
+  const msg = `A Todo must be less than ${maxLen} characters`;
   const [trigger, setTrigger] = useState(true);
+  const input = useInput(condition, msg);
 
+  useEffect(() => {
+    document.querySelector(".todo-input").value = "";
+  }, [trigger]);
+  const triggerHandler = () => {
+    setTrigger(!trigger);
+  };
   const onClick = () => {
     const currentInput = input.value;
     const currentTodos = loadTodos();
@@ -21,12 +27,20 @@ const Input = () => {
     setTrigger(!trigger);
   };
 
+  const pressEnter = e => {
+    if (e.key === "Enter") {
+      onClick();
+    }
+  };
+
   return (
     <div className="input">
-      <input {...input} />
-      <button onClick={onClick}>Add</button>
+      <input onKeyPress={pressEnter} className="todo-input" {...input} />
+      <button className="add-button" onClick={onClick}>
+        Add
+      </button>
       <Triggercontext.Provider value={trigger}>
-        <List />
+        <List triggerHandler={triggerHandler} />
       </Triggercontext.Provider>
     </div>
   );
