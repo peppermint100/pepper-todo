@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useInput } from "./hooks/useInput";
 import { loadTodos } from "./customs/loadTodos";
 import { addTodo } from "./customs/addTodo";
@@ -35,9 +35,9 @@ const Input = () => {
   return (
     <div className="input">
       <form className="input-form">
-        <input className="todo-input" {...input} autofocus />
+        <input className="todo-input" {...input} autoFocus />
         <button className="add-button" onClick={onClick}>
-          ➕
+          <span className="emoji-span">➕</span>
         </button>
       </form>
       <Triggercontext.Provider value={trigger}>

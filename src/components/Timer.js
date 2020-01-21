@@ -32,6 +32,9 @@ const Timer = () => {
       case 0:
         day = "SUN";
         break;
+      default:
+        day = "???";
+        break;
     }
     return { date, month, day, year };
   };

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import "./components/styles/App.scss";
-import Header from "./components/Header";
 import Input from "./components/Input";
 import Timer from "./components/Timer";
 

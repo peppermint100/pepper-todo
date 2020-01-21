@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import { loadTodos } from "./customs/loadTodos";
 import { saveTodos } from "./customs/saveTodos";
 import Triggercontext from "./Triggercontext";
@@ -6,6 +6,7 @@ import "./styles/todo.scss";
 
 const Todo = ({ todos, triggerHandler }) => {
   const trigger = useContext(Triggercontext);
+
   useEffect(() => {}, [trigger]);
 
   const deleteTodo = e => {
@@ -16,15 +17,18 @@ const Todo = ({ todos, triggerHandler }) => {
     triggerHandler();
   };
 
+  const todoRef = useRef();
+
   return (
     <div className="todo">
       {todos
         ? todos.map(todo => (
             <button
-              class="todo-button"
+              className="todo-button"
               onClick={deleteTodo}
               key={todo.id}
               value={todo.data}
+              ref={todoRef}
             >
               {todo.data}
             </button>
