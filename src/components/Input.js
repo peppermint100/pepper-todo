@@ -34,7 +34,7 @@ const Input = () => {
 
   return (
     <div className="input">
-      <form>
+      <form className="input-form">
         <input className="todo-input" {...input} autofocus />
         <button className="add-button" onClick={onClick}>
           ➕

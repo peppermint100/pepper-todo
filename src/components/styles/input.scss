@@ -1,7 +1,13 @@
 .input {
+  background-color: #fff;
+  .input-form {
+    background-color: #fff;
+  }
   .todo-input {
     all: unset;
     border-bottom: 1px solid rgb(184, 182, 182);
+    background-color: #fff;
+
     &:hover {
       animation: borderAnimation 0.5s ease-in-out forwards;
     }
@@ -13,8 +19,10 @@
     all: unset;
     cursor: pointer;
     margin-left: 2em;
+    background-color: #fff;
   }
   .todos-container {
+    background-color: #fff;
   }
 }
 

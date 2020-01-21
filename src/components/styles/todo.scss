@@ -2,6 +2,7 @@ $mainFont: "Oswald", sans-serif;
 
 .todo {
   position: relative;
+  background-color: #fff;
   .todo-button {
     all: unset;
     display: block;
@@ -9,10 +10,14 @@ $mainFont: "Oswald", sans-serif;
     font-size: 1em;
     font-family: $mainFont;
     border: 0px solid white;
-    background: lightgray;
+    background: rgb(221, 221, 221);
     border-radius: 10px;
     padding: 0.2em;
     margin: 1em auto;
     text-align: center;
+    &:hover {
+      background-color: red;
+      transition: background-color 1s;
+    }
   }
 }

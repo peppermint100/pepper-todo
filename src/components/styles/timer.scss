@@ -3,20 +3,25 @@ $mainFont: "Oswald", sans-serif;
 .timer {
   display: flex;
   font-family: $mainFont;
+  background-color: #fff;
   .left {
+    background-color: #fff;
     .day {
       font-size: 5em;
       font-weight: bold;
       line-height: 1.5em;
+      background-color: #fff;
     }
   }
   .right {
     margin-top: 1.7em;
     line-height: 2em;
+    background-color: #fff;
     .year {
       font-size: 2.5em;
       font-weight: bold;
       color: rgb(255, 49, 49);
+      background-color: #fff;
     }
     .right-bottom {
       color: rgb(105, 105, 105);
@@ -24,9 +29,12 @@ $mainFont: "Oswald", sans-serif;
       font-weight: bold;
       display: flex;
       justify-content: space-around;
+      background-color: #fff;
       .month {
+        background-color: #fff;
       }
       .date {
+        background-color: #fff;
       }
     }
   }

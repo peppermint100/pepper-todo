@@ -8,8 +8,9 @@ $boxShadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #e7e7e7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 
   .container {
     border: 0px solid #000;
@@ -17,5 +18,7 @@ $boxShadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     min-height: 30em;
     background-color: #fff;
     box-shadow: $boxShadow;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
   }
 }
